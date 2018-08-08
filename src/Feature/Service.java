@@ -46,18 +46,18 @@ public class Service {
 	}
 
 	public int getFirstName(String firstNameAccount) {
-		return (int) account.values().stream().filter(eachAccount -> eachAccount.getFirstName().equals(firstNameAccount))
+		return (int) account.values().stream().filter(Account -> Account.getFirstName().equals(firstNameAccount))
 				.count();
 	}
 
 	public int getLastName(String lastNameAccount) {
-		return (int) account.values().stream().filter(eachAccount -> eachAccount.getLastName().equals(lastNameAccount))
+		return (int) account.values().stream().filter(Account -> Account.getLastName().equals(lastNameAccount))
 				.count();
 	}
 
 	public int getAccountNumber(String userAccountNumber) {
 		return (int) account.values().stream()
-				.filter(eachAccount -> eachAccount.getAccountNumber().equals(userAccountNumber)).count();
+				.filter(Account -> Account.getAccountNumber().equals(userAccountNumber)).count();
 	}
 }
 

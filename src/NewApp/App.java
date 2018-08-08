@@ -31,8 +31,6 @@ public class App {
 		
 		String Iter = json.getObject(Feature.getFNIterator("Bob"));
 		
-	
-		
 		
 		System.out.println(FN);
 		System.out.println(LN);
