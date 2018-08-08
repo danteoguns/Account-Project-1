@@ -21,8 +21,24 @@ public class App {
 		Feature.countServiceFromMap(BillBillson);
 
 		String jsonInString = json.getObject(Feature.getAccountMap());
-
 		System.out.println(jsonInString);
+
+		String FN = json.getObject(Feature.getFirstName("Bill"));
+		
+		String LN = json.getObject(Feature.getLastName("Bobson"));
+		
+		String Acc = json.getObject(Feature.getAccountNumber("1"));
+		
+		String Iter = json.getObject(Feature.getFNIterator("Bob"));
+		
+	
+		
+		
+		System.out.println(FN);
+		System.out.println(LN);
+		System.out.println(Acc);
+		System.out.println(Iter);
+		
 	}
 
 }

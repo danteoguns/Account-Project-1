@@ -2,6 +2,7 @@ package Feature;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Service {
@@ -24,8 +25,8 @@ public class Service {
 	}
 
 	public void removeFromMap(Integer removeThisAccount) {
-		boolean idExsists = account.containsKey(removeThisAccount);
-		if (idExsists) {
+		boolean idExists = account.containsKey(removeThisAccount);
+		if (idExists) {
 			account.remove(removeThisAccount);
 		}
 	}
@@ -38,19 +39,34 @@ public class Service {
 		return this.account.get(key);
 	}
 
-//	public int getFirstName(String firstNameAccount) {
-//		return (int) account.values().stream()
-//				.filter(eachAccount -> eachAccount.getFirstName().equals(firstNameAccount)).count();
-//	}
-//
-//	public int getLastName(String LastNameAccount) {
-//		return (int) account.values().stream().filter(eachAccount -> eachAccount.getLastName().equals(LastNameAccount))
-//				.count();
-//	}
+	public Iterator<Account> getFNIterator(String firstNameAccount) {
+
+		return account.values().iterator();
+
+	}
+
+	public int getFirstName(String firstNameAccount) {
+		return (int) account.values().stream().filter(eachAccount -> eachAccount.getFirstName().equals(firstNameAccount))
+				.count();
+	}
+
+	public int getLastName(String lastNameAccount) {
+		return (int) account.values().stream().filter(eachAccount -> eachAccount.getLastName().equals(lastNameAccount))
+				.count();
+	}
 
 	public int getAccountNumber(String userAccountNumber) {
 		return (int) account.values().stream()
 				.filter(eachAccount -> eachAccount.getAccountNumber().equals(userAccountNumber)).count();
-
 	}
 }
+
+// public String getFirstName(String firstNameAccount) {
+//
+// for (int x = 0; x < account.size();x++) {
+// if (account.get(x).getFirstName().equals(firstNameAccount)) {
+// System.out.println(firstNameAccount);
+// }
+//
+// }
+// return "";
